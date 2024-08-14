@@ -12,11 +12,15 @@ There are two main components:
   “Q: Answer the following question with a value between 1 and 5 or NA. What is the Hoehn & Yahr score for the patient in the following note? Note: Note Content A: 3 Q: Answer the following question with a value between 1 and 5 or NA. What is the Hoehn & Yahr score for the patient in the following note? Note: Note Content A:”
 
 2. Analyses and population comparisons
-  All code to generate figures 1-3 and definitions are available in the labeled files.
+  All code to generate figures 1-3 and definitions are available in the labeled files (./analyses/Figure1-3.ipynb).
 
+  Figure1.ipynb - a jupyter notebook wich pulls the Unified Parkinson's Disease Rating Scale (UPDRS) scores for the datasets where they are available and plots their chagne over time. The analysis includes data filtering and transformation, such as scaling the UPDRS scores based on the number of years since diagnosis, to facilitate a normalized comparison across different patients. The key output of the notebook is a point plot that visualizes the average UPDRS score over time stratified by data source. 
+
+  Figure2.ipynb - performs a survival analysis for Parkinson's disease, comparing the survival rates of patients against different conditions and treatments. This took leverages the Kaplan-meier estimator from the lifelines python package as a non-parametric statstic to estimate the probability of avoiding an event of interest over time. Additionally, the notebook includes a statistical comparison between the survival curves using the log-rank test, a hypothesis test to compare the survival distributions of two samples. The results from this test are crucial for determining whether the observed differences between groups are likely due to chance or if they reflect a true underlying difference in survival.
+
+  Figure3.ipynb - this notebook mirrors Figure2.ipynb for two additional outcomes (falls & fractures, and depression). 
 
 Data Access
-
 All data used in this study are secondary use and therefore the authors must direct those interested in using any data involved to their source: Harvard Biomarkers set is accessible through the Accelerating Medicines Partnership program for Parkinson’s disease https://amp-pd.org/unified-cohorts/hbs and through https://www.bwhparkinsoncenter.org/biobank/. Mass General Brigham EMR; https://rc.partners.org/about/who-we-are-risc/research-patient-data-registry. Optum® Integrated Claims-EHR Data46 (https://www.optum.com/content/dam/optum3/optum/en/resources/fact-sheets/Integrated-Data-product-sheet.pdf), Fox Insight45 https://foxinsight.michaeljfox.org/.
 
 Please direct all questions to beaulieujones [at] uchicago.edu
